@@ -1,0 +1,57 @@
+.sidebar {
+  width: 290px; /* Sidebar width */
+  background-color: #040b14;
+  border-right: 1px solid #ddd;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  // overflow-y: scroll; /* Allows the sidebar to be scrollable if content overflows */
+  padding: 20px;
+  transition: transform 0.3s ease; /* Smooth transition for sidebar hiding */
+}
+
+.main-content {
+  margin-left: 290px; /* Same as the sidebar width */
+  padding: 20px;
+  overflow-y: scroll; /* Enables independent scrolling */
+  height: 100vh; /* Full viewport height */
+  flex: 1; /* Allows the content area to expand and fill the available space */
+}
+
+/* Media query for screens less than 1200px */
+@media (max-width: 1199px) {
+  .sidebar {
+    display: none; /* Hide sidebar on screens less than 1200px */
+  }
+
+  .main-content {
+    margin-left: 0; /* Main content takes full width */
+    width: 100%; /* Ensure main content takes up the full width */
+  }
+}
+
+/* Media query for screens 1200px and larger */
+@media (min-width: 1200px) {
+  .sidebar {
+    display: block; /* Show sidebar on screens 1200px and larger */
+    overflow-y: auto; /* Add scrolling if needed */
+    max-height: 100vh; /* Ensure sidebar height is limited to viewport height */
+  }
+
+  .main-content {
+    margin-left: 300px; /* Adjust margin to make space for the sidebar */
+    width: calc(100% - 300px); /* Adjust width to account for sidebar */
+  }
+}
+
+// .facebook {
+//   color: #1d1e1f; /* Facebook default color */
+//   transition: background-color 0.3s ease;
+// }
+
+// .facebook:hover {
+//   background-color: #fff;
+//   color: #3b5998; /* Ensure icon color is visible on hover */
+
+// }
